@@ -1,5 +1,6 @@
 import telebot
 import config
+from random import choise
 
 bot = telebot.TeleBot(config.TOKEN)
 
@@ -13,6 +14,11 @@ def welcome(message):
 
 @bot.message_handler(content_types=['text', 'sticker'])
 def lalala(message):
-    bot.send_message(message.chat.id, "Мой хозяин ещё не научил меня отвечать на подобные сообщения")
+    List = ["Нет", "Да", "А хорошо сказано", 
+            "Пожалуй", "Извиняюсь", "Пока.", 
+            "ХАХАХАХХАХАХХАХАХАХАХХАХАХАХА",
+            "Мой хозяин ещё не научил меня отвечать на подобные сообщения"]
+    
+    bot.send_message(message.chat.id, choise(List))
 
 bot.polling(none_stop=True)
