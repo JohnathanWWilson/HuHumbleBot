@@ -1,12 +1,12 @@
 import telebot
 import config
-from random import choise
+from random import choice
 
 bot = telebot.TeleBot(config.TOKEN)
 
 @bot.message_handler(commands=['start'])
 def welcome(message):
-    sti = open('stickers/HelloSti.webp', 'rb')
+    sti = open('stickers\HelloSti.webp', 'rb')
     bot.send_sticker(message.chat.id, sti)
 
     bot.send_message(message.chat.id, "Доброго времени суток, {0.first_name}!".format(message.from_user, parse_mode="html"))
@@ -19,6 +19,6 @@ def lalala(message):
             "ХАХАХАХХАХАХХАХАХАХАХХАХАХАХА",
             "Мой хозяин ещё не научил меня отвечать на подобные сообщения"]
     
-    bot.send_message(message.chat.id, choise(List))
+    bot.send_message(message.chat.id, choice(List))
 
 bot.polling(none_stop=True)
