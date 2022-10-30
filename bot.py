@@ -1,6 +1,6 @@
 import telebot
 import config
-from random import choice
+from random import choice, randint
 
 bot = telebot.TeleBot(config.TOKEN)
 
@@ -18,11 +18,24 @@ def welcome(message):
 
 @bot.message_handler(content_types=['text', 'sticker'])
 def lalala(message):
-    List = ["Нет", "Да", "А хорошо сказано", 
-            "Пожалуй", "Извиняюсь", "Пока.", 
-            "ХАХАХАХХАХАХХАХАХАХАХХАХАХАХА",
-            "Мой хозяин ещё не научил меня отвечать на подобные сообщения"]
-    
-    bot.send_message(message.chat.id, choice(List))
+    List_Slov = ["Нет", "Да", "А хорошо сказано", 
+                "Пожалуй", "Извиняюсь", "Пока.", 
+                "ХАХАХАХХАХАХХАХАХАХАХХАХАХАХА",
+                "Мой хозяин ещё не научил меня отвечать на подобные сообщения"]
+
+    List_Sti = ['BlinSti.webp', 'CringeSti.webp', 'DiCaprioSti.webp', 'EeSti.webp', 
+                'Hehe1Sti.webp', 'HeheSti.webp', 'IdeaSti.webp', 'NoSti.webp', 
+                'OSti.webp', 'Rock1Sti.webp', 'RockSti.webp', 'TiltSti.webp', 
+                'YameteSti.webp', 'YameteSti1.webp', 'YesSti.webp']
+
+    try:
+        sti = open(f'stickers\{choice(List_Sti)}', 'rb')
+    except:
+        sti = open(f'/app/stickers/{choice(List_Sti)}', 'rb')
+
+    if randint(0, 1) == 0:
+        bot.send_message(message.chat.id, choice(List_Slov))
+    else:
+        bot.send_sticker(message.chat.id, sti)
 
 bot.polling(none_stop=True)
