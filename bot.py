@@ -6,8 +6,12 @@ bot = telebot.TeleBot(config.TOKEN)
 
 @bot.message_handler(commands=['start'])
 def welcome(message):
-    sti = open('stickers\HelloSti.webp', 'rb')
-    bot.send_sticker(message.chat.id, sti)
+    try:
+        sti = open('stickers\HelloSti.webp', 'rb')
+        bot.send_sticker(message.chat.id, sti)
+    except:
+        sti = open('app\stickers\HelloSti.webp', 'rb')
+        bot.send_sticker(message.chat.id, sti)
 
     bot.send_message(message.chat.id, "Доброго времени суток, {0.first_name}!".format(message.from_user, parse_mode="html"))
     bot.send_message(message.chat.id, "Вы не против немного пообщаться?👉👈")
