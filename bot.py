@@ -12,7 +12,7 @@ def welcome(message):
     try:
         sti = open(f'stickers\{choice(List_Sti)}', 'rb')
     except:
-        sti = open(f'/app/stickers/{choice(List_Sti)}', 'rb')
+        sti = open(f'app/stickers/{choice(List_Sti)}', 'rb')
         
     bot.send_sticker(message.chat.id, sti)
 
@@ -35,7 +35,7 @@ def lalala(message):
     try:
         sti = open(f'stickers\{choice(List_Sti)}', 'rb')
     except:
-        sti = open(f'/app/stickers/{choice(List_Sti)}', 'rb')
+        sti = open(f'app/stickers/{choice(List_Sti)}', 'rb')
 
     if randint(0, 1) == 0:
         bot.send_message(message.chat.id, choice(List_Slov))
