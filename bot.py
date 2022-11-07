@@ -10,7 +10,7 @@ def welcome(message):
     List_Sti = ['HelloSti.webp', 'Hello1Sti.webp', 'Hello2Sti.webp']
 
     try:
-        sti = open(f'stickers\{choice(List_Sti)}', 'rb')
+        sti = open(f'stickers/{choice(List_Sti)}', 'rb')
     except:
         sti = open(f'/app/stickers/{choice(List_Sti)}', 'rb')
         
@@ -33,7 +33,7 @@ def lalala(message):
                 'YameteSti.webp', 'YameteSti1.webp', 'YesSti.webp']
 
     try:
-        sti = open(f'stickers\{choice(List_Sti)}', 'rb')
+        sti = open(f'stickers/{choice(List_Sti)}', 'rb')
     except:
         sti = open(f'/app/stickers/{choice(List_Sti)}', 'rb')
 
