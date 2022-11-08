@@ -1,8 +1,16 @@
 import telebot
 import config
 from random import choice, randint
+from flask import Flask, request
+
+url = 'https://mrolive.pythonanywhere.com/' + config.secret
 
 bot = telebot.TeleBot(config.TOKEN)
+bot.remove_webhook()
+bot.set_webhook(url=url)
+
+app = Flask(__name__)
+
 
 @bot.message_handler(commands=['start'])
 def welcome(message):
