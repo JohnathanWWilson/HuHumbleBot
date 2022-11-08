@@ -1,28 +1,8 @@
 import telebot
 import config
 from random import choice, randint
-from flask import Flask, request
-import git
-
-url = 'https://mrolive.pythonanywhere.com/' + config.secret
 
 bot = telebot.TeleBot(config.TOKEN)
-bot.remove_webhook()
-bot.set_webhook(url=url)
-
-app = Flask(__name__)
-@app.route('/'+config.secret, methods=['POST'])
-def webhook():
-    if request.method == 'POST':
-        repo = git.Repo('path/to/git_repo')
-        origin = repo.remotes.origin
-
-        origin.pull
-
-        return 'Updated PythonAnywhere successfully', 200
-    else:
-        return 'Wrong event type', 400
-
 
 @bot.message_handler(commands=['start'])
 def welcome(message):
@@ -62,4 +42,4 @@ def lalala(message):
     else:
         bot.send_sticker(message.chat.id, sti)
 
-bot.polling(none_stop=True)
+bot.infinity_polling(timeout=10, long_polling_timeout = 5)
