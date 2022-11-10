@@ -35,17 +35,22 @@ def welcome(message):
 
 @bot.message_handler(content_types=['text', 'sticker'])
 def lalala(message):
-    # "Как дела?" и тому подобные:
-    if process.extractOne(message.text, qu.How_Are_U_Qu)[1] > 70:
-        ans_or_sti(message.chat.id, ans.How_Are_U_Ans, ans.How_Are_U_Ans_Sti)
-    # "Да":
-    elif process.extractOne(message.text, qu.Yes_Qu)[1] > 70:
-        ans_or_sti(message.chat.id, ans.Yes_Ans, ans.Yes_Ans_Sti)
-    # Если сообщение содержит брань:
-    elif process.extractOne(message.text, foul_language.Foul)[1] > 70 and fuzz.partial_ratio(message.text, 'Да') < 90:
-        ans_or_sti(message.chat.id, ans.Foul_Ans, ans.Foul_Ans_Sti)
-    else:
-        ans_or_sti(message.chat.id, ans.Not_Understood_Ans, ans.List_Sti)
+    resemblance = process.extractOne(message.text, foul_language.Foul)
+    if resemblance[1] > 80:
+        if resemblance[0] in qu.Yes_Qu:
+            ans_or_sti(message.chat.id, ans.Yes_Ans, ans.Yes_Ans_Sti)
+        elif resemblance[0] in qu.How_Are_U_Qu:
+            ans_or_sti(message.chat.id, ans.How_Are_U_Ans, ans.How_Are_U_Ans_Sti)
+        elif resemblance[0] in qu.Who_Are_U_Qu:
+            bot.send_message(message.chat.id, choice(ans.Who_Are_U_Ans))
+        elif resemblance[0] in qu.Psychologist_Qu:
+            bot.send_message(message.chat.id, choice(ans.Psychologist_Ans))
+        elif resemblance[0] in qu.How_Old_Are_U_Qu:
+            bot.send_message(message.chat.id, choice(ans.How_Old_Are_U_Ans))
+        elif resemblance[0] in qu.What_Qu:
+            bot.send_message(message.chat.id, choice(ans.What_Ans))
+        else:
+            ans_or_sti(message.chat.id, ans.Not_Understood_Ans, ans.List_Sti)
 
 
 bot.infinity_polling(timeout=10, long_polling_timeout = 5)
