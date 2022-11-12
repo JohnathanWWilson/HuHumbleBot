@@ -1,5 +1,5 @@
 import telebot
-import config, foul_language 
+import config, dictionary
 import answers as ans
 import questions as qu
 from random import choice, randint
@@ -35,7 +35,7 @@ def welcome(message):
 
 @bot.message_handler(content_types=['text', 'sticker'])
 def lalala(message):
-    resemblance = process.extractOne(message.text, foul_language.Foul)
+    resemblance = process.extractOne(message.text, dictionary.Lang)
     if resemblance[1] > 80:
         if resemblance[0] in qu.Yes_Qu:
             ans_or_sti(message.chat.id, ans.Yes_Ans, ans.Yes_Ans_Sti)
@@ -49,8 +49,10 @@ def lalala(message):
             bot.send_message(message.chat.id, choice(ans.How_Old_Are_U_Ans))
         elif resemblance[0] in qu.What_Qu:
             bot.send_message(message.chat.id, choice(ans.What_Ans))
-        else:
-            ans_or_sti(message.chat.id, ans.Not_Understood_Ans, ans.List_Sti)
+        elif resemblance[0] in qu.What_Are_U_Doing_Qu:
+            bot.send_message(message.chat.id, choice(ans.What_Are_U_Doing_Ans))
+    else:
+        ans_or_sti(message.chat.id, ans.Not_Understood_Ans, ans.List_Sti)
 
 
 bot.infinity_polling(timeout=10, long_polling_timeout = 5)
