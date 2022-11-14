@@ -80,7 +80,7 @@ def lalala(message):
             elif resemblance[0] in dictionary.Foul:
                 ans_or_sti(message.chat.id, ans.Foul_Ans, ans.Foul_Ans_Sti)
             elif resemblance[0] in qu.Good_Night_Qu:
-                bot.send_message(message.chat.id, choice(ans.Bye_Ans))
+                ans_or_sti(message.chat.id, ans.Good_Night_Ans, ans.Good_Night_Ans_Sti)
             elif resemblance[0] in qu.Bye_Qu:
                 bot.send_message(message.chat.id, choice(ans.Bye_Ans))
             elif resemblance[0] in qu.HaHa_Qu:

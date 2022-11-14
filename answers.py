@@ -84,7 +84,8 @@ Not_Understood_Ans = ["Нет", "Да", "А хорошо сказано", "По�
 Foul_Ans_Sti = ['CringeSti.webp', 'Rock1Sti.webp', 'RockSti.webp', 
                 'TiltSti.webp', 'Cho1Sti.webp', 'Ee1Sti.webp', 
                 'Tilt1Sti.webp', 'Tilt2Sti.webp', 'Tilt3Sti.webp', 
-                'ObidnoSti.webp']
+                'ObidnoSti.webp', 'FeSti.webp', 'Fe1Sti.webp', 'ChoSti.webp',
+                'BooSti.webp']
 
 # Как дела? Как ты?
 How_Are_U_Ans_Sti = ['TiltSti.webp', 'Tilt1Sti.webp', 'Tilt2Sti.webp', 
@@ -101,7 +102,8 @@ No_Ans_Sti = ['NoSti.webp', 'No1Sti.webp', 'No2Sti.webp',
 # Привет
 Hello_Ans_Sti = ['HelloSti.webp', 'Hello1Sti.webp', 'Hello2Sti.webp', 'Hello3Sti.webp',
                  'Hello4Sti.webp', 'Hello5Sti.webp', 'Hello6Sti.webp', 'Hello7Sti.webp',
-                 'Hello8Sti.webp', 'GiSti.webp']
+                 'Hello8Sti.webp', 'Hello14Sti.webp', 'Hello9Sti.webp', 'Hello10Sti.webp',
+                 'Hello11Sti.webp', 'Hello12Sti.webp', 'Hello13Sti.webp', 'GiSti.webp', 'Gi1Sti.webp']
 
 # Что?
 What_Ans_Sti = ['QuestionsSti.webp', 'HmSti.webp']
@@ -110,16 +112,25 @@ What_Ans_Sti = ['QuestionsSti.webp', 'HmSti.webp']
 About_What_Ans_Sti = ['QuestionsSti.webp', 'HmSti.webp']
 
 # Хаха
-HaHa_Ans_Sti = ['HeheSti.webp', 'Hehe1Sti.webp', 'Hehe2Sti.webp', 'GiSti.webp']
+HaHa_Ans_Sti = ['HeheSti.webp', 'Hehe1Sti.webp', 'Hehe2Sti.webp', 'GiSti.webp', 'Gi1Sti.webp']
+
+# Чем занимаешься? Что делаешь?
+What_Are_U_Doing_Ans_Sti = ['EatSti.webp', 'Eat1Sti.webp', 'Eat2Sti.webp', 'Eat3Sti.webp',
+                            'Sleep1Sti.webp', 'Sleep2Sti.webp', 'Sleep3Sti.webp', 'SleepSti.webp']
+
+# Спокойной ночи
+Good_Night_Ans_Sti = ['Sleep1Sti.webp', 'Sleep2Sti.webp', 'Sleep3Sti.webp', 'SleepSti.webp']
 
 # Все стикеры
-List_Ans_Sti = ['YesSti.webp', 'BlinSti.webp', 'Cho1Sti.webp', 'CringeSti.webp', 
-                'DiCaprioSti.webp', 'Ee1Sti.webp', 'EeSti.webp', 'GiSti.webp', 
-                'Hehe1Sti.webp', 'Hehe2Sti.webp', 'HeheSti.webp', 'Hello1Sti.webp', 
-                'Hello2Sti.webp', 'Hello3Sti.webp', 'Hello4Sti.webp', 'Hello5Sti.webp', 
-                'Hello6Sti.webp', 'Hello7Sti.webp', 'Hello8Sti.webp', 'HelloSti.webp', 
-                'HmSti.webp', 'IdeaSti.webp', 'No1Sti.webp', 'No2Sti.webp', 'No3Sti.webp', 
-                'No4Sti.webp', 'NoSti.webp', 'ObidnoSti.webp', 'OpaSti.webp', 'OSti.webp', 
-                'QuestionsSti.webp', 'Rock1Sti.webp', 'RockSti.webp', 'Tilt1Sti.webp', 
-                'Tilt2Sti.webp', 'Tilt3Sti.webp', 'TiltSti.webp', 'YameteSti.webp', 
+List_Ans_Sti = ['YesSti.webp', 'BlinSti.webp', 'BooSti.webp', 'Cho1Sti.webp', 'ChoSti.webp', 'CringeSti.webp',
+                'DiCaprioSti.webp', 'Eat1Sti.webp', 'Eat2Sti.webp', 'Eat3Sti.webp', 'EatSti.webp', 'Ee1Sti.webp', 
+                'EeSti.webp', 'Fe1Sti.webp', 'FeSti.webp', 'Gi1Sti.webp', 'GiSti.webp', 'Hehe1Sti.webp', 
+                'Hehe2Sti.webp', 'HeheSti.webp', 'Hello1Sti.webp', 'Hello2Sti.webp', 'Hello3Sti.webp', 
+                'Hello4Sti.webp', 'Hello5Sti.webp', 'Hello6Sti.webp', 'Hello7Sti.webp', 'Hello8Sti.webp', 
+                'Hello9Sti.webp', 'Hello10Sti.webp', 'Hello11Sti.webp', 'Hello12Sti.webp', 'Hello13Sti.webp', 
+                'Hello14Sti.webp', 'HelloSti.webp', 'HmSti.webp', 'IdeaSti.webp', 'MorningSti.webp', 'No1Sti.webp', 
+                'No2Sti.webp', 'No3Sti.webp', 'No4Sti.webp', 'NoSti.webp', 'ObidnoSti.webp', 'OofSti.webp', 
+                'OpaSti.webp', 'OSti.webp', 'QuestionsSti.webp', 'Rock1Sti.webp', 'RockSti.webp', 'Sleep1Sti.webp', 
+                'Sleep2Sti.webp', 'Sleep3Sti.webp', 'SleepSti.webp', 'Tilt1Sti.webp', 'Tilt2Sti.webp', 'Tilt3Sti.webp', 
+                'TiltSti.webp', 'Wow1Sti.webp', 'Wow2Sti.webp', 'Wow3Sti.webp', 'WowSti.webp', 'YameteSti.webp', 
                 'YameteSti1.webp', 'Yes1Sti.webp']
