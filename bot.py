@@ -85,6 +85,8 @@ def lalala(message):
                 bot.send_message(message.chat.id, choice(ans.Bye_Ans))
             elif resemblance[0] in qu.HaHa_Qu:
                 ans_or_sti(message.chat.id, ans.HaHa_Ans, ans.HaHa_Ans_Sti)
+            elif resemblance[0] in qu.How_Many_Qu:
+                bot.send_message(message.chat.id, choice(ans.How_Many_Ans))
         else:
             ans_or_sti(message.chat.id, ans.Not_Understood_Ans, ans.List_Ans_Sti)
 
