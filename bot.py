@@ -66,6 +66,15 @@ def welcome(message):
     send_ans(message.chat.id, "Доброго времени суток, {0.first_name}!".format(message.from_user, parse_mode="html"))
     send_ans(message.chat.id, "Вы не против немного пообщаться?👉👈")
 
+# Отправка сообщений кому-либо
+@bot.message_handler(commands=['sms'])
+def txt_to_smb(message):
+    print()
+    List = message.text.split('; ')
+    espionage(bot.send_message(List[1], List[2]))
+    print(f'To Whom: {List[1]}')
+    print(f'Where from: {message.chat.id}')
+
 # Основная часть интеллекта бота
 @bot.message_handler(content_types=['text', 'sticker'])
 def lalala(message):
